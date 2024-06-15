@@ -1,0 +1,69 @@
+.\" Man page for passhash
+.\" Contact: AntiSecTech <contact.antisec@pm.me>
+.\" Copyright: CC BY-NC 4.0
+
+.TH PASSHASH 1 "June 2024" "passhash 1.0" "passhash - generate hashed password strings using OpenSSL"
+
+.SH NAME
+passhash \- generate hashed password strings using OpenSSL
+
+.SH SYNOPSIS
+.B passhash
+.RB \-p: "[password]"
+.RB [\ -u: "[username]"]
+.RB [\ -s: "[salt]"]
+
+.SH DESCRIPTION
+.B passhash
+is a command-line utility that generates hashed password strings using OpenSSL. It accepts options to specify the password, username, and salt for hash generation.
+
+.SH OPTIONS
+.TP
+.B \-p: "[password]"
+Specifies the password for which the hash will be generated. This option is required.
+
+.TP
+.B \-u: "[username]"
+Specifies the username associated with the hashed password. If not provided, defaults to "root".
+
+.TP
+.B \-s: "[salt]"
+Specifies the salt to be used in the hashing process. If not provided, defaults to "salted".
+
+.SH EXAMPLES
+To generate a hashed password for the password "my_password" with the default username "root" and default salt "salted":
+.PP
+.EX
+$ passhash -p:my_password
+.EE
+
+To generate a hashed password for the password "secure_pass" with a specific username "admin" and a custom salt "my_salt":
+.PP
+.EX
+$ passhash -p:secure_pass -u:admin -s:my_salt
+.EE
+
+.SH EXIT STATUS
+.TP
+.B 0
+Successful execution.
+
+.TP
+.B 1
+Errors encountered during execution.
+
+.SH AUTHORS
+Written by AntiSecTech <https://antisectech.github.io/>.
+
+.SH REPORTING BUGS
+Report any bugs to <contact.antisec@pm.me>.
+
+.SH COPYRIGHT
+.B passhash
+is licensed under the CC BY-NC 4.0 license. See <https://creativecommons.org/licenses/by-nc/4.0/legalcode.txt> for more details.
+
+.SH SEE ALSO
+.BR openssl (1)
+
+.SH NOTES
+This documentation is based on the functionality of the passhash utility using OpenSSL for password hashing.
