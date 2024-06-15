@@ -30,5 +30,6 @@ make clean
 ```
 
 ## Notes
-- Ensure you have the necessary permissions to write to and delete files in **/bin** and **/usr/share/man/man1**.
+- Ensure you have the necessary permissions to write to and delete files in **/bin** and **/usr/share/man/man1**.<br>
+  Otherwise you can use the `sudo make install` or `sudo make uninstall` command.
 - The Makefile assumes that a manpage file named `passhash.1` exists if a manpage is to be installed.
